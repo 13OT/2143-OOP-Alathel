@@ -52,8 +52,8 @@ class fraction(object):
 	
 		
 if __name__ == '__main__':
-	a = fraction(7,2,0)
-	b = fraction(9,4,0)
+	a = fraction(1,2,0)
+	b = fraction(3,4,0)
 	#x = input("Enter the Numerator for the first number")
 	#numerator(a,x)
 	#a.numerator = int(input(" Enter the Numerator for the first number"))
