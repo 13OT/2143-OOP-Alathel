@@ -10,7 +10,6 @@ class BalancedSearch(object):
 		random = input('Choose a number')
 		if type(random) is int:
 		seed(random)
-		print("came here")
 
 		
 	
@@ -69,16 +68,10 @@ class BalancedSearch(object):
 		temp = [-1 for x in range(self.size)]
 		self.tree.extend(temp)
 		self.size *= 2
-		print("AHA",self.items)
+		print(self.items)
 		
-	def p(self):
-		x = 0
-		
-		print("This is mE!",self.tree)
-		print(len(self.tree))
-		print (self.items)
-		print("MEmEm",self.tree)
-			"""
+
+		"""
 @Name: find
 @Description:
     find if a value exists in the list and how many comparisons it took to find it
