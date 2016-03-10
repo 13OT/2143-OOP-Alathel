@@ -10,7 +10,7 @@ class BalancedSearch(object):
 		random = input('Choose a number')
 		if type(random) is int:
 			seed(random)
-		print("came here")
+			print("came here")
 
 		
 	
