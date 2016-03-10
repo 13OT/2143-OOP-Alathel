@@ -9,11 +9,12 @@ class BalancedSearch(object):
 		self.items = 0
 		random = input('Choose a number')
 		if type(random) is int:
-		seed(random)
+			seed(random)
+		print("came here")
 
 		
 	
-		"""
+	"""
 @Name: insert
 @Description:
     Receives a list of unordered integers and inserts them into the binary tree in such a manner that the resulting tree is balanced.
@@ -25,33 +26,33 @@ class BalancedSearch(object):
 			
 		if root == None:
 			root = self.root
-			if len(aList) == 3:
-				self.tree[root]=aList[1]
-				right = root*2+1
-				left = root*2
-				self.tree[left] = aList[0]
-				self.tree[right]= aList[2]
-				return
+		if len(aList) == 3:
+			self.tree[root]=aList[1]
+			right = root*2+1
+			left = root*2
+			self.tree[left] = aList[0]
+			self.tree[right]= aList[2]
+			return
+		else:
+			if len(aList)%2 == 0:
+				mid = int((len(aList)-2)/2)
+				RightTreelist = aList[mid+1:]
+				LeftTreelist = aList[1:mid]
+				print("11LeftTreelist",LeftTreelist)
+				print("11RightTreelist",RightTreelist)
+
 			else:
-				if len(aList)%2 == 0:
-					mid = int((len(aList)-2)/2)
-					RightTreelist = aList[mid+1:]
-					LeftTreelist = aList[1:mid]
-					print("11LeftTreelist",LeftTreelist)
-					print("11RightTreelist",RightTreelist)
+				mid = int((len(aList)-1)/2)
+				RightTreelist = aList[mid+1:]
+				LeftTreelist = aList[0:mid]
+				print("22LeftTreelist",LeftTreelist)
+				print("22RightTreelist",RightTreelist)
+				print(self.root)
 
-				else:
-					mid = int((len(aList)-1)/2)
-					RightTreelist = aList[mid+1:]
-					LeftTreelist = aList[0:mid]
-					print("22LeftTreelist",LeftTreelist)
-					print("22RightTreelist",RightTreelist)
-					print(self.root)
-
-				self.tree[root] = aList[mid]
-				self.insert(LeftTreelist,0,mid,(self.root*2))
-				self.insert(RightTreelist,mid+1,len(RightTreelist),(self.root*2+1))
-				
+			self.tree[root] = aList[mid]
+			self.insert(LeftTreelist,0,mid,(self.root*2))
+			self.insert(RightTreelist,mid+1,len(RightTreelist),(self.root*2+1))
+			
 			# loop until you find the location to insert
 			# even if you have to extend this list
 				
@@ -68,9 +69,16 @@ class BalancedSearch(object):
 		temp = [-1 for x in range(self.size)]
 		self.tree.extend(temp)
 		self.size *= 2
-		print(self.items)
+		print("AHA",self.items)
 		
-
+	def p(self):
+		x = 0
+		
+		print("This is mE!",self.tree)
+		print(len(self.tree))
+		print (self.items)
+		print("MEmEm",self.tree)
+		
 		"""
 @Name: find
 @Description:
