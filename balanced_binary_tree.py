@@ -11,6 +11,7 @@ class BalancedSearch(object):
 		if type(random) is int:
 			seed(random)
 
+
 		
 	
 	"""
@@ -31,21 +32,26 @@ class BalancedSearch(object):
 			left = root*2
 			self.tree[left] = aList[0]
 			self.tree[right]= aList[2]
+			print("ROOT",root)
 			return
 		else:
 			if len(aList)%2 == 0:
 				mid = int((len(aList)-2)/2)
 				RightTreelist = aList[mid+1:]
 				LeftTreelist = aList[1:mid]
-				print(LeftTreelist)
-				print(RightTreelist)
+				print("11LeftTreelist",LeftTreelist)
+				self.insert(LeftTreelist,0,mid,(root*2))
+				print("11RightTreelist",RightTreelist)
+				self.insert(RightTreelist,mid+1,len(RightTreelist),(root*2+1))
 
 			else:
 				mid = int((len(aList)-1)/2)
 				RightTreelist = aList[mid+1:]
 				LeftTreelist = aList[0:mid]
-				print(LeftTreelist)
-				print(RightTreelist)
+				print("22LeftTreelist",LeftTreelist)
+				self.insert(LeftTreelist,0,mid,(root*2))
+				print("22RightTreelist",RightTreelist)
+				self.insert(RightTreelist,mid+1,len(RightTreelist),(root*2+1))
 				print(self.root)
 
 			self.tree[root] = aList[mid]
@@ -69,13 +75,6 @@ class BalancedSearch(object):
 		self.tree.extend(temp)
 		self.size *= 2
 		print(self.items)
-		
-	def p(self):
-		x = 0
-		
-		print(len(self.tree))
-		print (self.items)
-		print(self.tree)
 		
 		"""
 @Name: find
