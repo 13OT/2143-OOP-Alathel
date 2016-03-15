@@ -1,4 +1,5 @@
 #Abdullah Alathel
+#chris gborgli
 import random
 import time
 
