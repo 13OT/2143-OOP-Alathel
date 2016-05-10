@@ -65,5 +65,8 @@ if __name__ == '__main__':
 		else:
 			handval = "Full House !"
 			score = 8
+		else:
+			handval = "Loser !"
+			score = 0
 	print(handval)
 	print(score)
