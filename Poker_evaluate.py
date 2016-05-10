@@ -3,11 +3,22 @@ class Card():
 	def __init__(self,x):
 		self.rank = x[0]
 		self.suit = x[1]
+	def __eq__(self,other):
+		if self.rank == other.rank and self.suit == other.suit:
+			return True
+		else:
+			return 0
+	def __lt__(self,other):
+		if self.rank > other.rank:
+			return 1
+		else:
+			return 0
 if __name__ == '__main__':
 	hand = []
-	array = [(9,1),(8,2),(7,3),(6,4),(5,1)]
+	array = [(5,1),(8,2),(7,3),(6,4),(9,1)]
 	for val in array:
 		hand.append(Card(val))
+	hand.sort()
 	suitDict = collections.defaultdict(int)
 	rankDict = collections.defaultdict(int)
 	handval = ""
@@ -65,8 +76,4 @@ if __name__ == '__main__':
 		else:
 			handval = "Full House !"
 			score = 8
-		else:
-			handval = "Loser !"
-			score = 0
 	print(handval)
-	print(score)
