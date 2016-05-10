@@ -9,7 +9,7 @@ class Card():
 		else:
 			return 0
 	def __lt__(self,other):
-		if self.rank > other.rank:
+		if self.rank < other.rank:
 			return 1
 		else:
 			return 0
@@ -28,7 +28,7 @@ if __name__ == '__main__':
 	for card in hand:
 		rankDict[card.rank] += 1 
 		suitDict[card.suit] += 1 
-	if (hand[0].rank - hand[4].rank == 4) and (len(hand) == 5): 
+	if (hand[4].rank - hand[0].rank == 4) and (len(hand) == 5): 
 		straight = True
 		handval ="Straight !"
 		score = 4
@@ -41,7 +41,7 @@ if __name__ == '__main__':
 		straightflush = True
 		score = 50
 		handval ="Straight Flush !"
-	if straightflush and hand[0].rank == 14:
+	if straightflush and hand[4].rank == 14:
 		score = 800
 		handval ="Royal Flush !"
 	if len(rankDict) == 4:
