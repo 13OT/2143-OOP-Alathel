@@ -1,6 +1,17 @@
 import random
 import sys
 import collections
+"""
+@Class Card
+@Description:
+    This class create a card object and provide some cards methods
+@Methods:
+    getRank() - returns the rank of a card
+    getSuit() - return the type of the card
+    __repr__() - print a card object
+    __eq__() - checks if two cards are equal
+    __lt__() - checks if the first card rank is less than the second one
+""" 
 class Card(object):
 	def __init__(self, suit, rank):
 		self.rank = rank
@@ -30,6 +41,17 @@ class Card(object):
 			return 1
 		else:
 			return 0
+"""
+@Class video_poker
+@Description:
+    This class handels creating a deck, dealing the cards, and evaluting the hand score then passing it to game_driver
+@Methods:
+    shuffle() - shuffles the Deck
+    deal() - deals a given number of cards and prompt the user to "Keep hand" or "Replace cards" then calls evaluate with the final hand
+    restock() - refills self.cards list and calls shuffle()
+    __str__() - checks if printed value is a list, if it is print card objects one by one, else prints value
+    evaluate() - evaluates a given hand then print the result with the score then pass score to game_driver and calls print_menu2
+""" 
 class video_poker(Card):
 	def __init__ (self):
 		self.suits = ['spades','hearts','diamonds','clubs'] 
@@ -73,6 +95,8 @@ class video_poker(Card):
 		if type(self)==list:
 			for v in self:
 				print(v)
+		else:
+			print(self)
 
 
 
@@ -143,6 +167,16 @@ class video_poker(Card):
 		print("This hand gets you " + str(score))
 		game_driver.get_score(self,score)
 		game_driver.print_menu2(self)
+"""
+@Class game_driver
+@Description:
+    This class handels the total score printing the menu and controls the main game
+@Methods:
+    get_score() - gets the score of the hand and add it to the total score
+    print_menu() - prints the game menu and gets a choice from the user
+    print_menu2() - prints the total score, and prints the game menu, and gets a choice from the user
+    to_do() - controls the game based on the user's choice
+""" 
 
 class game_driver(video_poker,Card):
 	def __init__(self):
