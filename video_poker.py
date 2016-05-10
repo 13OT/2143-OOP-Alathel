@@ -1,4 +1,5 @@
 import random
+import sys
 import collections
 class Card(object):
 	def __init__(self, suit, rank):
@@ -152,6 +153,8 @@ class game_driver(video_poker,Card):
 		self.score = num
 	def print_menu(self):
 		self.choice = int(input(" 1: New Game\n 2: Play Again\n 3: Quit\n"))
+		if self.choice == 3:
+			sys.exit("Good Bye")
 	def print_menu2(self):
 		print("Total Score :" + str(self.score))
 		self.choice = int(input(" 1: New Game\n 2: Play Again\n 3: Quit\n"))
