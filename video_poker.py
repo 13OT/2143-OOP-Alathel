@@ -137,8 +137,8 @@ class video_poker(Card):
 				handval = "Full House !"
 				score = 8
 		else:
-			handval = "Loser !"
-			self.score = 0
+			handval = "You Lose !"
+			score = 0
 		print(handval)
 		print("This hand gets you " + str(score))
 		game_driver.get_score(self,score)
@@ -150,7 +150,7 @@ class game_driver(video_poker,Card):
 		self.choice = None
 		super().__init__()
 	def get_score(self, num):
-		self.score = num
+		self.score += num
 	def print_menu(self):
 		self.choice = int(input(" 1: New Game\n 2: Play Again\n 3: Quit\n"))
 		if self.choice == 3:
