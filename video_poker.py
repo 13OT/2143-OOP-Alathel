@@ -178,7 +178,7 @@ class video_poker(Card):
     to_do() - controls the game based on the user's choice
 """ 
 
-class game_driver(video_poker,Card):
+class game_driver(video_poker):
 	def __init__(self):
 		self.score = 0
 		self.choice = None
