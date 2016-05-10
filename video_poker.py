@@ -159,12 +159,12 @@ class game_driver(video_poker,Card):
 	def to_do(self):
 		if self.choice == 1:
 			self.score = 0
-			print("Score :" + str(self.score))
+			print("Total Score :" + str(self.score))
 			self.deal(5)
 		elif self.choice == 2:
-			print("Score :" + str(self.score))
 			self.deal(5)
 		elif self.choice == 3:
+			print("Your Total Score was :" + str(self.score))
 			sys.exit("Good Bye")
 
 
