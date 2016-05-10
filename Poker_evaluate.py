@@ -15,7 +15,7 @@ class Card():
 			return 0
 if __name__ == '__main__':
 	hand = []
-	array = [(5,1),(8,2),(7,3),(6,4),(9,1)]
+	array = [(5,1),(14,2),(7,3),(6,4),(9,1)]
 	for val in array:
 		hand.append(Card(val))
 	hand.sort()
@@ -76,4 +76,8 @@ if __name__ == '__main__':
 		else:
 			handval = "Full House !"
 			score = 8
+	else:
+		handval = "Loser !"
+		score = 0
 	print(handval)
+	print(score)
