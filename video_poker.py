@@ -117,7 +117,6 @@ class video_poker(Card):
 			straight = True
 			handval ="Straight !"
 			score = 4
-			print (hand)
 		if len(suitDict) == 1:
 			flush = True
 			handval ="Flush !"
