@@ -129,8 +129,11 @@ class video_poker(Card):
 			score = 800
 			handval ="Royal Flush !"
 		if len(rankDict) == 4:
-			handval ="One Pair !"
-			score = 1
+			for _card in rankDict:
+				if rankDict[_card] ==2:
+					if _card >=11 and _card <= 14:
+						handval ="One Pair !"
+						score = 1
 		elif len(rankDict) == 3:
 			if 3 in rankDict.values():
 				handval ="Three of a Kind !"
