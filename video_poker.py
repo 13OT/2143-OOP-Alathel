@@ -113,7 +113,7 @@ class video_poker(Card):
 		for card in hand:
 			rankDict[card.rank] += 1 
 			suitDict[card.suit] += 1 
-		if (hand[4].rank - hand[0].rank == 4) and (len(hand) == 5): 
+		if (hand[4].rank - hand[0].rank == 4) and (len(rankDict) == 5): 
 			straight = True
 			handval ="Straight !"
 			score = 4
